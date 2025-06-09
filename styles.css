@@ -55,7 +55,7 @@ body {
 }
 
 /* Regras aplicadas apenas para telas pequenas (até 600px) */
-@media (max-width: 600px) {
+@media (max-width: 669px) {
 
   /* Define metade da largura para logo e nav */
   #header > a,
