@@ -1,0 +1,110 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+  margin: 0; /* remove margens padrão */
+  padding: 0; /* remove espaçamentos internos padrão */
+  box-sizing: border-box; /* inclui bordas e padding dentro do tamanho total dos elementos */
+}
+
+/* Estilização de títulos e parágrafos */
+h1, h2, h3, p {
+  color: black; /* define a cor do texto como preta */
+  font-family: Arial, sans-serif; /* define a fonte padrão */
+}
+
+/* Estilização de links */
+a {
+  color: #ffffff; /* define a cor do link como branca */
+  text-decoration: none; /* remove o sublinhado dos links */
+}
+
+/* Layout principal do corpo */
+body {
+  display: flex; /* ativa o flexbox */
+  flex-direction: column; /* organiza os filhos em coluna */
+  align-items: center; /* centraliza os filhos horizontalmente */
+  width: 100vw; /* ocupa 100% da largura da janela */
+}
+
+/* Estilização do cabeçalho */
+#header {
+  display: flex; /* ativa o flexbox no header */
+  flex-direction: row; /* filhos (logo e nav) ficam lado a lado */
+  justify-content: space-between; /* espaço entre os filhos */
+  align-items: center; /* centraliza verticalmente os filhos */
+  padding: 0 10px; /* espaço interno nas laterais */
+  background-color: #1c1c1c; /* cor de fundo escura */
+  width: 100%; /* ocupa toda a largura da tela */
+  margin-bottom: 40px; /* espaço abaixo do cabeçalho */
+}
+
+/* Container de navegação (menu) */
+#header nav {
+  display: flex; /* ativa flexbox no nav */
+  align-items: center; /* centraliza os itens verticalmente */
+  min-height: 60px; /* altura mínima do nav */
+}
+
+/* Lista de links do menu */
+#header nav > ul {
+  display: flex; /* ativa flexbox na lista */
+  flex-direction: row; /* organiza os links em linha */
+  flex-wrap: wrap; /* permite que os links quebrem de linha */
+  gap: 20px; /* espaço entre os links */
+  list-style: none; /* remove os marcadores da lista */
+  justify-content: flex-end; /* alinha os links à direita */
+}
+
+/* Regras aplicadas apenas para telas pequenas (até 600px) */
+@media (max-width: 600px) {
+
+  /* Define metade da largura para logo e nav */
+  #header > a,
+  #header > nav {
+    width: 50%; /* cada um ocupa 50% da largura do header */
+  }
+
+  /* Aumenta o tamanho da fonte da logo */
+  #header > a {
+    font-size: 54px; /* texto grande para logo */
+  }
+
+  /* Altera o layout da lista do menu */
+  #header nav > ul {
+    flex-direction: column; /* coloca os links em coluna */
+    align-items: flex-start; /* alinha os links à esquerda */
+    gap: 10px; /* espaço menor entre links na vertical */
+  }
+
+  /* Adiciona padding e cor de fundo aos links */
+  #header nav > ul > li {
+    padding: 0 10px; /* espaço interno lateral nos itens */
+    background: #444; /* fundo para diferenciar os itens */
+  }
+}
+
+/* Seção principal que contém os artigos */
+#section {
+  display: flex; /* ativa flexbox */
+  flex-direction: row; /* artigos em linha */
+  flex-wrap: wrap; /* permite que os artigos quebrem linha */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  gap: 20px; /* espaço entre artigos */
+  margin-top: 40px; /* espaço acima da seção */
+}
+
+/* Estilização de cada artigo */
+#section article {
+  display: flex; /* ativa flexbox no artigo */
+  flex-direction: column; /* organiza imagem e legenda em coluna */
+  align-items: center; /* centraliza horizontalmente */
+  justify-content: center; /* centraliza verticalmente */
+}
+
+/* Estilização da imagem dos artigos */
+#section article > img {
+  object-fit: cover; /* recorta a imagem mantendo proporção */
+  max-height: 220px; /* altura máxima da imagem */
+  width: auto; /* largura automática proporcional */
+}
+  
